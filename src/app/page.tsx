@@ -1,5 +1,6 @@
 import PublicNavbar from "@/components/Navbar/PublicNavbar";
 import {Hero} from "@/components/view/home/Hero";
+import Service from "@/components/view/home/Service";
 
 export default function Home() {
   return (
@@ -7,7 +8,7 @@ export default function Home() {
     <PublicNavbar />
     <div>
       <Hero />
-      <h2>Testimonial</h2>
+      <Service />
     </div>
    </div>
   );
