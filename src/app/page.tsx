@@ -1,5 +1,5 @@
 import PublicNavbar from "@/components/Navbar/PublicNavbar";
-import {Hero} from "@/components/view/Hero/Hero";
+import {Hero} from "@/components/view/home/Hero";
 
 export default function Home() {
   return (

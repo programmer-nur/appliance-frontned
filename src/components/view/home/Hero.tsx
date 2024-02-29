@@ -27,7 +27,7 @@ export function Hero() {
           />
           <Button
             type="submit"
-            className="py-5 px-7 h-12 bg-main flex justify-center items-center hover:bg-main font-medium"
+            className="py-5 px-6 h-12 bg-main text-lg flex justify-center items-center hover:bg-main font-medium"
           >
             Search
           </Button>
