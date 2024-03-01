@@ -1,7 +1,7 @@
 "use client";
 import { getErrorMessage } from "@/schema/schema-validation";
 import { useFormContext, Controller } from "react-hook-form";
-import { cn } from "../lib/utils";
+import { cn } from "../../lib/utils";
 interface IInput {
   name: string;
   type?: string;

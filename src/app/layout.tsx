@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Archivo } from "next/font/google";
 import "./globals.css";
 import Providers from "./lib/Providers";
+import { Toaster } from "@/components/ui/toaster"
 
 const archivo = Archivo({ subsets: ["latin"] });
 
@@ -20,6 +21,7 @@ export default function RootLayout({
       <body className={archivo.className}>
         <Providers>
         {children}
+        <Toaster />
         </Providers>
         </body>
     </html>

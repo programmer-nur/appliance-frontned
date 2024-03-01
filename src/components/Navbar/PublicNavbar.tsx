@@ -1,6 +1,8 @@
 "use client"
+import Link from "next/link";
 import { useState } from "react";
-
+import logo from "../../../public/assets/images/pro_logo.png"
+import Image from "next/image";
 const PublicNavbar = () => {
   const [open, setOpen] = useState(false);
   const activeClassName =
@@ -13,9 +15,9 @@ const PublicNavbar = () => {
       id="nav"
     >
       <div className="flex h-16  justify-between items-center mx-auto max-w-7xl border-b lg:border-none bg-opacity-30 bg-transparent px-4 lg:px-16">
-        <a href="index.html" className="text-3xl text-black font-extrabold dark:text-white">
-          Lawyer
-        </a>
+        <Link href="/" className="text-3xl text-black font-extrabold dark:text-white">
+        <Image width={100} height={40} src={logo} alt="logo" />
+        </Link>
         <nav className="hidden lg:block duration-300 ease-in-out overflow-hidden">
           <ul className="lg:flex lg:space-x-4 font-medium dark:text-white text-black">
             <li>
@@ -62,12 +64,12 @@ const PublicNavbar = () => {
         </nav>
         <div className="hidden items-center justify-end md:flex  lg:w-0">
         
-          <a
-            href="/contact"
+          <Link
+            href="/login"
             className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-main px-7 py-2 text-base font-medium text-white shadow-sm hover:bg-main duration-300 "
           >
-            Get Starts
-          </a>
+            Log In
+          </Link>
         </div>
         <div className="text-3xl md:hidden" onClick={() => setOpen(!open)}>
          open

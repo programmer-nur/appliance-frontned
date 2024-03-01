@@ -3,7 +3,7 @@ import { Controller, useFormContext } from "react-hook-form";
 import Image from "next/image";
 import imageTry from "../../../public/assets/clients/cyber.png";
 import { Input } from "../ui/input";
-import { cn } from "../lib/utils";
+import { cn } from "../../lib/utils";
 import { getErrorMessage } from "@/schema/schema-validation";
 interface IInput {
   name: string;
