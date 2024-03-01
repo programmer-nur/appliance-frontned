@@ -1,8 +1,9 @@
+import Login from '@/components/view/login/Login'
 import React from 'react'
 
 const LoginPage = () => {
   return (
-    <div>LoginPage</div>
+    <div><Login /></div>
   )
 }
 
