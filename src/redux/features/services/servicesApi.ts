@@ -1,6 +1,6 @@
 import { baseApi } from "@/redux/api/baseApi";
 import { tagTypes } from "@/redux/tag-types";
-import {  IMeta } from "@/types";
+import {  IMeta, IService } from "@/types";
 
 const SERVICE_URL = "/services";
 
@@ -14,7 +14,7 @@ export const serviceApi = baseApi.injectEndpoints({
           params: arg,
         };
       },
-      transformResponse: (response: any[], meta: IMeta) => {
+      transformResponse: (response: IService[], meta: IMeta) => {
         return {
           courses: response,
           meta,
