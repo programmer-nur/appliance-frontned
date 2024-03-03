@@ -13,6 +13,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 const TrendingService = () => {
   const { data, isLoading } = useServicesQuery({ limit: 5 });
+  //@ts-ignore
   const services = data?.services?.data || [];
   console.log(services);
   let content;
