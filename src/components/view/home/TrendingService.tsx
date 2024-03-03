@@ -58,7 +58,7 @@ const TrendingService = () => {
             >
               <div className="p-1">
                 <Link className="group" href={"/"} key={category?.id}>
-                  <div className="h-64 rounded-md flex justify-center items-center">
+                  <div className="h-48 sm:h-64 rounded-md flex justify-center items-center">
                     <Image
                       src={category.image}
                       width={800}
@@ -67,7 +67,7 @@ const TrendingService = () => {
                       alt="category"
                     />
                   </div>
-                  <h2 className="text-xl  font-medium text-center py-2">
+                  <h2 className="text-base sm:text-xl font-medium text-center py-2">
                     <Link className="group-hover:text-main line-clamp-1" href={"/"}>
                       {category.name}
                     </Link>

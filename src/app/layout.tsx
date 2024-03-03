@@ -3,6 +3,7 @@ import { Archivo } from "next/font/google";
 import "./globals.css";
 import Providers from "./lib/Providers";
 import { Toaster } from "@/components/ui/toaster"
+import AppFooter from "@/components/view/home/AppFooter";
 
 const archivo = Archivo({ subsets: ["latin"] });
 
@@ -21,6 +22,7 @@ export default function RootLayout({
       <body className={`${archivo.className} bg-[#fffff7]`}>
         <Providers>
         {children}
+        <AppFooter />
         <Toaster />
         </Providers>
         </body>

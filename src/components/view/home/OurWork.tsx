@@ -7,7 +7,7 @@ const OurWork = () => {
       <div className="max-w-7xl mx-auto px-4 py-8 sm:py-16">
         <div className="py-5 flex items-center gap-3">
           <hr className="w-10 h-[3px] bg-main my-2" />{" "}
-          <span className="text-lg">HOW IT WORKS</span>
+          <span className="text-sm sm:text-lg">HOW IT WORKS</span>
         </div>
         <h1 className="font-medium sm:text-4xl sm:font-bold  text-black  text-base">
           Easiest way to get a service

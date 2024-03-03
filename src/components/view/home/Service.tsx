@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { useCategoriesQuery } from "@/redux/features/category/categoryApi";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
-import ServiceCard from "./ServiceCard";
 import Image from "next/image";
 import { Skeleton } from "@/components/ui/skeleton";
 
@@ -12,49 +11,53 @@ const Service = () => {
 
   let content;
   if (isLoading) {
-    content =  content = <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
-    <div className="flex flex-col space-y-3">
-    <Skeleton className="h-[155px] rounded-xl" />
-    <div className="space-y-2">
-      <Skeleton className="h-4" />
-      <Skeleton className="h-4 w-[200px]" />
-    </div>
-  </div>
-    <div className="md:flex hidden flex-col space-y-3">
-    <Skeleton className="h-[155px] rounded-xl" />
-    <div className="space-y-2">
-      <Skeleton className="h-4" />
-      <Skeleton className="h-4 w-[200px]" />
-    </div>
-  </div>
-    <div className="lg:flex hidden flex-col space-y-3">
-    <Skeleton className="h-[155px] rounded-xl" />
-    <div className="space-y-2">
-      <Skeleton className="h-4" />
-      <Skeleton className="h-4 w-[200px]" />
-    </div>
-  </div>
-  </div>;
+    content = content = (
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
+        <div className="flex flex-col space-y-3">
+          <Skeleton className="h-[155px] rounded-xl" />
+          <div className="space-y-2">
+            <Skeleton className="h-4" />
+            <Skeleton className="h-4 w-[200px]" />
+          </div>
+        </div>
+        <div className="md:flex hidden flex-col space-y-3">
+          <Skeleton className="h-[155px] rounded-xl" />
+          <div className="space-y-2">
+            <Skeleton className="h-4" />
+            <Skeleton className="h-4 w-[200px]" />
+          </div>
+        </div>
+        <div className="lg:flex hidden flex-col space-y-3">
+          <Skeleton className="h-[155px] rounded-xl" />
+          <div className="space-y-2">
+            <Skeleton className="h-4" />
+            <Skeleton className="h-4 w-[200px]" />
+          </div>
+        </div>
+      </div>
+    );
   }
   if (!isLoading && categories?.length > 0) {
     content = (
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
-         {categories?.slice(0, 3)?.map((category: any) => (
-            <Link className="group" href={'/'} key={category?.id}>
-              <div  className="h-64 rounded-md flex justify-center items-center">
-                <Image
-                  src={category.image}
-                  width={800}
-                  height={800}
-                  className="w-full h-full object-cover rounded-md"
-                  alt="category"
-                />
-              </div>
-              <h2 className="text-xl  font-medium text-center py-2">
-                <Link className="group-hover:text-main" href={'/'}>{category.title}</Link>
-              </h2>
-            </Link>
-          ))}
+        {categories?.slice(0, 3)?.map((category: any) => (
+          <Link className="group" href={"/"} key={category?.id}>
+            <div className="h-48 sm:h-64 rounded-md flex justify-center items-center">
+              <Image
+                src={category.image}
+                width={800}
+                height={800}
+                className="w-full h-full object-cover rounded-md"
+                alt="category"
+              />
+            </div>
+            <h2 className="text-base sm:text-xl  font-medium text-center py-2">
+              <Link className="group-hover:text-main" href={"/"}>
+                {category.title}
+              </Link>
+            </h2>
+          </Link>
+        ))}
       </div>
     );
   }
@@ -73,11 +76,7 @@ const Service = () => {
           </Button>
         </Link>
       </div>
-      <div className="py-10">
-       {content}
-      </div>
-      {/* Service */}
-      {/* <div>{content}</div> */}
+      <div className="py-10">{content}</div>
     </div>
   );
 };

@@ -3,8 +3,6 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
 import { useServicesQuery } from "@/redux/features/services/servicesApi";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -54,7 +52,7 @@ const Testimonial = () => {
               className="md:basis-1/2 lg:basis-1/3"
             >
               <div className="min-h-[300px] w-full">
-              <div className="min-h-[300px] bg-gray-100 p-8 rounded-md">
+              <div className="min-h-[300px] bg-gray-50 p-8 rounded-md">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -89,9 +87,9 @@ const Testimonial = () => {
       <div className="">
       <div className="py-5 flex items-center gap-3">
         <hr className="w-10 h-[3px] bg-main my-2" />{" "}
-        <span className="text-lg">TESTIMONIAL</span>
+        <span className="text-sm sm:text-lg">TESTIMONIAL</span>
       </div>
-      <h1 className="font-medium mb-8 sm:text-4xl sm:font-bold text-black  text-base">
+      <h1 className="font-medium sm:text-4xl sm:font-bold text-black  text-base">
       Real Happy Customers
       </h1>
       </div>
