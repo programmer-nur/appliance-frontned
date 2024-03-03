@@ -16,7 +16,7 @@ export const serviceApi = baseApi.injectEndpoints({
       },
       transformResponse: (response: IService[], meta: IMeta) => {
         return {
-          courses: response,
+          services: response,
           meta,
         };
       },

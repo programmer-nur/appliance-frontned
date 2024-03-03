@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={archivo.className}>
+      <body className={`${archivo.className} bg-[#fffff7]`}>
         <Providers>
         {children}
         <Toaster />
