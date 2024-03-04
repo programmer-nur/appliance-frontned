@@ -6,7 +6,7 @@ const ServiceCard = ({ service }: { service: IService }) => {
   return (
     <Link
       className="group transition-all duration-300 ease-in-out"
-      href={`/all-services/${service.id}`}
+      href={`/services/${service.id}`}
     >
       <div className="w-full shadow-md rounded-md h-[220px]">
         <Image

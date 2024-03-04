@@ -15,7 +15,7 @@ const AppFooter = () => {
   const establish = data.getFullYear();
   return (
     <footer className="px-4 divide-y font-roboto bg-gray-100 text-black">
-      <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
+      <div className="container flex p-0 flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
         <div className="flex justify-start items-center">
           <Link
             className="flex h-[60px] w-[150px] justify-start items-center"

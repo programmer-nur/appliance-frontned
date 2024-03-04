@@ -81,11 +81,11 @@ const Services = () => {
         id={item.id}
         key={item.id}
       >
-        <h2 className="text-xl sm:text-2xl font-bold font-roboto">
+        <h2 className="text-xl sm:text-2xl font-medium sm:font-bold">
           {item.title}
         </h2>
         <div className="h-1 bg-main mt-4 mb-6" />
-        <div className="grid grid-cols-3 justify-center items-center gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-center items-center gap-4">
           {item?.services?.map((service: IService) => (
             <ServiceCard key={service?.id} service={service} />
           ))}
@@ -95,12 +95,12 @@ const Services = () => {
   }
 
   return (
-    <div className="max-w-7xl !scroll-smooth mx-auto">
+    <div className="max-w-7xl !scroll-smooth px-4 mx-auto">
       <div className="py-8">
-        <h2 className="text-4xl font-medium">All Services</h2>
+        <h2 className="text-3xl sm:text-4xl font-medium">All Services</h2>
 
-        <div className="flex justify-between py-16 gap-8">
-          <div className="w-[320px]">
+        <div className="flex justify-between py-8 sm:py-16 gap-8">
+          <div className="w-[320px] sm:block hidden">
             <ul
               style={{
                 height: "100vh",
