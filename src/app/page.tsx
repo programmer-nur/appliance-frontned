@@ -2,7 +2,7 @@ import PublicNavbar from "@/components/Navbar/PublicNavbar";
 import ChooseUs from "@/components/view/home/ChooseUs";
 import {Hero} from "@/components/view/home/Hero";
 import OurWork from "@/components/view/home/OurWork";
-import Service from "@/components/view/home/Service";
+import CategoryService from "@/components/view/home/CategoryService";
 import Testimonial from "@/components/view/home/Testimonial";
 import TrendingService from "@/components/view/home/TrendingService";
 
@@ -12,7 +12,7 @@ export default function Home() {
     <PublicNavbar />
     <div>
       <Hero />
-      <Service />
+      <CategoryService />
       <TrendingService />
       <ChooseUs />
       <OurWork />

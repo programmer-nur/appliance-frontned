@@ -1,6 +1,7 @@
 import { baseApi } from "@/redux/api/baseApi";
 import { tagTypes } from "@/redux/tag-types";
-import {  IMeta, IService } from "@/types";
+import {  IMeta } from "@/types";
+import { IService } from "@/types/service";
 
 const SERVICE_URL = "/services";
 

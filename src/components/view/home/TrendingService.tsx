@@ -18,29 +18,31 @@ const TrendingService = () => {
   console.log(services);
   let content;
   if (isLoading) {
-    content =  content = <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
-    <div className="flex flex-col space-y-3">
-    <Skeleton className="h-[155px] rounded-xl" />
-    <div className="space-y-2">
-      <Skeleton className="h-4" />
-      <Skeleton className="h-4 w-[200px]" />
-    </div>
-  </div>
-    <div className="md:flex hidden flex-col space-y-3">
-    <Skeleton className="h-[155px] rounded-xl" />
-    <div className="space-y-2">
-      <Skeleton className="h-4" />
-      <Skeleton className="h-4 w-[200px]" />
-    </div>
-  </div>
-    <div className="lg:flex hidden flex-col space-y-3">
-    <Skeleton className="h-[155px] rounded-xl" />
-    <div className="space-y-2">
-      <Skeleton className="h-4" />
-      <Skeleton className="h-4 w-[200px]" />
-    </div>
-  </div>
-  </div>;
+    content = content = (
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
+        <div className="flex flex-col space-y-3">
+          <Skeleton className="h-[155px] rounded-xl" />
+          <div className="space-y-2">
+            <Skeleton className="h-4" />
+            <Skeleton className="h-4 w-[200px]" />
+          </div>
+        </div>
+        <div className="md:flex hidden flex-col space-y-3">
+          <Skeleton className="h-[155px] rounded-xl" />
+          <div className="space-y-2">
+            <Skeleton className="h-4" />
+            <Skeleton className="h-4 w-[200px]" />
+          </div>
+        </div>
+        <div className="lg:flex hidden flex-col space-y-3">
+          <Skeleton className="h-[155px] rounded-xl" />
+          <div className="space-y-2">
+            <Skeleton className="h-4" />
+            <Skeleton className="h-4 w-[200px]" />
+          </div>
+        </div>
+      </div>
+    );
   }
   if (!isLoading && services?.length > 0) {
     content = (
@@ -68,7 +70,10 @@ const TrendingService = () => {
                     />
                   </div>
                   <h2 className="text-base sm:text-xl font-medium text-center py-2">
-                    <Link className="group-hover:text-main line-clamp-1" href={"/"}>
+                    <Link
+                      className="group-hover:text-main line-clamp-1"
+                      href={"/"}
+                    >
                       {category.name}
                     </Link>
                   </h2>

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import logo from "../../../public/assets/images/pro_logo.png"
 import Image from "next/image";
+import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 const PublicNavbar = () => {
   const [open, setOpen] = useState(false);
   const activeClassName =
@@ -21,28 +22,28 @@ const PublicNavbar = () => {
         <nav className="hidden lg:block duration-300 ease-in-out overflow-hidden">
           <ul className="lg:flex lg:space-x-4 font-medium dark:text-white text-black">
             <li>
-              <a
+              <Link
                 className="dark:text-white text-black hover:text-main"
-                href="#"
+                href="/"
               >
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 className="dark:text-white text-black hover:text-main"
-                href="#service"
+                href="/services"
               >
                 Services
-              </a>
+              </Link>
             </li>
             <li>
-              <a
+              <Link
                 className="dark:text-white text-black hover:text-main"
                 href="#work"
               >
                 Works
-              </a>
+              </Link>
             </li>
             <li>
               <a
@@ -53,12 +54,12 @@ const PublicNavbar = () => {
               </a>
             </li>
             <li>
-              <a
+              <Link
                 className="dark:text-white text-black hover:text-main"
                 href="#contact"
               >
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>
@@ -72,34 +73,34 @@ const PublicNavbar = () => {
           </Link>
         </div>
         <div className="text-3xl md:hidden" onClick={() => setOpen(!open)}>
-         open
+         <HamburgerMenuIcon />
         </div>
       </div>
 
       {/* <!-- mobile menu --> */}
       <div
-        className={`content md:hidden bg-white fixed w-full p-20 py-8 bottom-0 duration-500 ${
-          open ? "left-0" : "left-[-100%]"
+        className={`content md:hidden overflow-hidden bg-white fixed w-full p-20 py-8 bottom-0 duration-500 ${
+          open ? "left-0 top-14" : "left-[-100%] top-14"
         }`}
       >
-        <a
+        <Link
           className="block text-center text-lg font-semibold pb-2"
-          href="index.html"
+          href="/"
         >
           Home
-        </a>
-        <a className="block text-center text-lg font-semibold pb-2" href="#">
+        </Link>
+        <Link className="block text-center text-lg font-semibold pb-2" href="#">
           About
-        </a>
-        <a className="block text-center text-lg font-semibold pb-2" href="#">
+        </Link>
+        <Link className="block text-center text-lg font-semibold pb-2" href="/services">
           Services
-        </a>
-        <a className="block text-center text-lg font-semibold pb-2" href="#">
+        </Link>
+        <Link className="block text-center text-lg font-semibold pb-2" href="/portfolio">
           Portfolio
-        </a>
-        <a className="block text-center text-lg font-semibold pb-2" href="#">
+        </Link>
+        <Link className="block text-center text-lg font-semibold pb-2" href="#">
           Pricing
-        </a>
+        </Link>
         <a className="block text-center text-lg font-semibold pb-2" href="#">
           Dropdown
         </a>

@@ -6,7 +6,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Skeleton } from "@/components/ui/skeleton";
 
-const Service = () => {
+const CategoryService = () => {
   const { data: categories, isLoading } = useCategoriesQuery(undefined);
 
   let content;
@@ -81,4 +81,4 @@ const Service = () => {
   );
 };
 
-export default Service;
+export default CategoryService;
