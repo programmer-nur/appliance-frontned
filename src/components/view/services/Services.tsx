@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 
 const Services = () => {
   const [activeId, setActiveId] = useState("");
-  console.log(activeId);
+
   const handelChange = (id: any) => {
     setActiveId(id);
   };
