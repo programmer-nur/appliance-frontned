@@ -14,9 +14,9 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast";
 const LoginForm = () => {
   const router = useRouter();
-  const [userLogin] = useUserLoginMutation()
-  const { toast } = useToast()
-  
+  const [userLogin] = useUserLoginMutation();
+  const { toast } = useToast();
+
   const onSubmit = async (values: { email: string; password: string }) => {
     try {
       const res = await userLogin(values).unwrap();
@@ -46,38 +46,31 @@ const LoginForm = () => {
         </div>
         <div>
           <div>
-          <Form
-            submitHandler={onSubmit}
-            resolver={zodResolver(LoginSchema)}
-            
-          >
-            <div className="grid grid-cols-6  col-span-full lg:col-span-3 gap-0">
-              <div className="col-span-full">
-                <FormInput
-                  className={" bg-white"}
-                  name="email"
-                  label="Email Address"
-                  placeholder="Enter your email address"
-                />
+            <Form submitHandler={onSubmit} resolver={zodResolver(LoginSchema)}>
+              <div className="grid grid-cols-6  col-span-full lg:col-span-3 gap-0">
+                <div className="col-span-full">
+                  <FormInput
+                    className={" bg-white"}
+                    name="email"
+                    label="Email Address"
+                    placeholder="Enter your email address"
+                  />
+                </div>
+                <div className="col-span-full">
+                  <FormInput
+                    className={" bg-white"}
+                    name="password"
+                    label="Password"
+                    placeholder="Enter your password"
+                  />
+                </div>
               </div>
-              <div className="col-span-full">
-                <FormInput
-                  className={" bg-white"}
-                  name="password"
-                  label="Password"
-                  placeholder="Enter your password"
-                />
+              <div className="mt-2">
+                <Button className="w-full bg-main py-5" type="submit">
+                  Login
+                </Button>
               </div>
-            </div>
-            <div className="mt-2">
-              <Button
-                className="w-full bg-main py-5"
-                type="submit"
-              >
-                Login
-              </Button>
-            </div>
-          </Form>
+            </Form>
           </div>
         </div>
         <div className="mt-5 text-primary">

@@ -1,13 +1,12 @@
-"use client"
+"use client";
 import Link from "next/link";
 import { useState } from "react";
-import logo from "../../../public/assets/images/pro_logo.png"
+import logo from "../../../public/assets/images/pro_logo.png";
 import Image from "next/image";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 const PublicNavbar = () => {
   const [open, setOpen] = useState(false);
-  const activeClassName =
-    "text-base font-medium text-black dark:text-white";
+  const activeClassName = "text-base font-medium text-black dark:text-white";
   const inactiveClassName =
     "text-base font-medium text-black dark:text-white hover:text-black dark:hover:text-main duration-300 ease-in-out";
   return (
@@ -16,8 +15,11 @@ const PublicNavbar = () => {
       id="nav"
     >
       <div className="flex h-16  justify-between items-center mx-auto max-w-7xl border-b lg:border-none bg-opacity-30 bg-transparent px-4 lg:px-16">
-        <Link href="/" className="text-3xl text-black font-extrabold dark:text-white">
-        <Image width={100} height={40} src={logo} alt="logo" />
+        <Link
+          href="/"
+          className="text-3xl text-black font-extrabold dark:text-white"
+        >
+          <Image width={100} height={40} src={logo} alt="logo" />
         </Link>
         <nav className="hidden lg:block duration-300 ease-in-out overflow-hidden">
           <ul className="lg:flex lg:space-x-4 font-medium dark:text-white text-black">
@@ -64,7 +66,6 @@ const PublicNavbar = () => {
           </ul>
         </nav>
         <div className="hidden items-center justify-end md:flex  lg:w-0">
-        
           <Link
             href="/login"
             className="ml-8 inline-flex items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-main px-7 py-2 text-base font-medium text-white shadow-sm hover:bg-main duration-300 "
@@ -73,7 +74,7 @@ const PublicNavbar = () => {
           </Link>
         </div>
         <div className="text-3xl md:hidden" onClick={() => setOpen(!open)}>
-         <HamburgerMenuIcon />
+          <HamburgerMenuIcon />
         </div>
       </div>
 
@@ -83,19 +84,22 @@ const PublicNavbar = () => {
           open ? "left-0 top-14" : "left-[-100%] top-14"
         }`}
       >
-        <Link
-          className="block text-center text-lg font-semibold pb-2"
-          href="/"
-        >
+        <Link className="block text-center text-lg font-semibold pb-2" href="/">
           Home
         </Link>
         <Link className="block text-center text-lg font-semibold pb-2" href="#">
           About
         </Link>
-        <Link className="block text-center text-lg font-semibold pb-2" href="/services">
+        <Link
+          className="block text-center text-lg font-semibold pb-2"
+          href="/services"
+        >
           Services
         </Link>
-        <Link className="block text-center text-lg font-semibold pb-2" href="/portfolio">
+        <Link
+          className="block text-center text-lg font-semibold pb-2"
+          href="/portfolio"
+        >
           Portfolio
         </Link>
         <Link className="block text-center text-lg font-semibold pb-2" href="#">

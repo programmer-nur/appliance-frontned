@@ -5,15 +5,13 @@ import Link from "next/link";
 import React, { useState } from "react";
 import ServiceCard from "./ServiceCard";
 import { Skeleton } from "@/components/ui/skeleton";
-import { usePathname, useRouter } from "next/navigation";
 
 const Services = () => {
-  const [activeId,setActiveId] = useState("")
-  console.log(activeId)
-  const handelChange= (id:any)=>{
-      setActiveId(id)
-  }
-
+  const [activeId, setActiveId] = useState("");
+  console.log(activeId);
+  const handelChange = (id: any) => {
+    setActiveId(id);
+  };
   const {
     data: categories,
     isLoading,
@@ -129,9 +127,15 @@ const Services = () => {
                   key={category.id}
                   className="w-full"
                   href={`/services/#${category?.id}`}
-                  onClick={()=>handelChange(category?.id)}
+                  onClick={() => handelChange(category?.id)}
                 >
-                  <li className={`${activeId === category.id ? "border-r-4 border-main bg-slate-200":""} py-2 transition-all duration-500 ease-in-out my-1 text-base hover:bg-slate-200 px-2 w-full`}>
+                  <li
+                    className={`${
+                      activeId === category.id
+                        ? "border-r-4 border-main bg-slate-200"
+                        : ""
+                    } py-2 transition-all duration-500 ease-in-out my-1 text-base hover:bg-slate-200 px-2 w-full`}
+                  >
                     {category.title}
                   </li>
                 </Link>
