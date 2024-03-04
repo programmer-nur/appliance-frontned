@@ -1,6 +1,6 @@
 import { baseApi } from "@/redux/api/baseApi";
 import { tagTypes } from "@/redux/tag-types";
-import {  IMeta } from "@/types";
+import { IMeta } from "@/types";
 import { IService } from "@/types/service";
 
 const SERVICE_URL = "/services";
@@ -61,5 +61,8 @@ export const serviceApi = baseApi.injectEndpoints({
 });
 
 export const {
- useAddServiceMutation,useDeleteServiceMutation,useServicesQuery,useServiceQuery
+  useAddServiceMutation,
+  useDeleteServiceMutation,
+  useServicesQuery,
+  useServiceQuery,
 } = serviceApi;

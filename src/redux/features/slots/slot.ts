@@ -1,55 +1,59 @@
 import { baseApi } from "@/redux/api/baseApi";
 import { tagTypes } from "@/redux/tag-types";
-const BOOKING_URL = "/bookings";
+const SLOT_URL = "/slots";
 
-export const bookingApi = baseApi.injectEndpoints({
+export const slotApi = baseApi.injectEndpoints({
   endpoints: (build) => ({
-    bookings: build.query({
+    slots: build.query({
       query: () => {
         return {
-          url: BOOKING_URL,
+          url: SLOT_URL,
           method: "GET",
         };
       },
-      providesTags: [tagTypes.booking],
+      providesTags: [tagTypes.slot],
     }),
     // get single
-    booking: build.query({
+    slot: build.query({
       query: (id: string) => ({
-        url: `${BOOKING_URL}/${id}`,
+        url: `${SLOT_URL}/${id}`,
         method: "GET",
       }),
-      providesTags: [tagTypes.booking],
+      providesTags: [tagTypes.slot],
     }),
     // create
-    addBooking: build.mutation({
+    addSlot: build.mutation({
       query: (data) => ({
-        url: BOOKING_URL,
+        url: SLOT_URL,
         method: "POST",
         data,
       }),
-      invalidatesTags: [tagTypes.booking],
+      invalidatesTags: [tagTypes.slot],
     }),
     // update
-    updateBooking: build.mutation({
+    updateSlot: build.mutation({
       query: (data) => ({
-        url: `${BOOKING_URL}/${data.id}`,
+        url: `${SLOT_URL}/${data.id}`,
         method: "PATCH",
         data: data.body,
       }),
-      invalidatesTags: [tagTypes.booking],
+      invalidatesTags: [tagTypes.slot],
     }),
     // delete
-    deleteBooking: build.mutation({
+    deleteSlot: build.mutation({
       query: (id) => ({
-        url: `${BOOKING_URL}/${id}`,
+        url: `${SLOT_URL}/${id}`,
         method: "DELETE",
       }),
-      invalidatesTags: [tagTypes.booking],
+      invalidatesTags: [tagTypes.slot],
     }),
   }),
 });
 
 export const {
-useAddBookingMutation,useBookingQuery,useBookingsQuery,useDeleteBookingMutation,useUpdateBookingMutation
-} = bookingApi;
+  useAddSlotMutation,
+  useSlotQuery,
+  useSlotsQuery,
+  useDeleteSlotMutation,
+  useUpdateSlotMutation,
+} = slotApi;
