@@ -71,7 +71,7 @@ const Services = () => {
   if (!isLoading && isError) {
     content = <div>Something is wrong!</div>;
   }
-  if (!isLoading && !isError && categories.length > 0) {
+  if (!isLoading && !isError && categories?.length > 0) {
     content = categories?.map((item: ICategory) => (
       <section
         className="scroll-smooth pb-4 sm:pb-10"
