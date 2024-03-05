@@ -9,7 +9,7 @@ import {
   DialogFooter,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import { useParams, usePathname } from "next/navigation";
+import { useParams } from "next/navigation";
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Schedule } from "./Schedule";
@@ -19,6 +19,11 @@ import { getUserInfo } from "@/services";
 import { useToast } from "@/components/ui/use-toast";
 import { ToastAction } from "@radix-ui/react-toast";
 import { useRouter } from "next/navigation";
+import {
+  useAddBookingMutation,
+  useBookingsQuery,
+} from "@/redux/features/booking/bookingApi";
+import { ISlot } from "@/types/service";
 
 const ServiceDetails = () => {
   const router = useRouter();
@@ -28,12 +33,16 @@ const ServiceDetails = () => {
   const initialSelectedValue = format(currentDate, "yyyy-MM-dd");
   const [selectedValue, setSelectedValue] = useState(initialSelectedValue);
   const [selectSlot, setSelectSlot] = useState(null);
-  const [open, setOpen] = useState(false);
+
+  const { data: bookings } = useBookingsQuery({ limit: 10 });
+  console.log(bookings, "bookings");
+
+  const [addBooking] = useAddBookingMutation();
   // fetch data
   const { data: service } = useServiceQuery(params?.id);
   const user = getUserInfo() as any;
   const { data: slots } = useSlotsQuery(undefined);
-  console.log(user.id, "user");
+
   // handel crate new bookings.
   const handleCreateBooking = async (id: string) => {
     if (!user?.id) {
@@ -64,12 +73,13 @@ const ServiceDetails = () => {
         date: format(selectedValue, "yyyy-MM-dd"),
       };
       console.log(data, "submitted");
-      // const result = await createBooking(data);
-      // if (result) {
-      //   toast({
-      //     title: "Successfully Booked",
-      //   });
-      // }
+      const result = await addBooking(data);
+      console.log(result);
+      if (result) {
+        toast({
+          title: "Successfully Booked",
+        });
+      }
     } catch (error) {
       toast({
         title: "Failed to booking. Please try again",
